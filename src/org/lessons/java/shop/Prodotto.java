@@ -50,17 +50,24 @@ public class Prodotto {
 	public float getFullPrice() {
 		return getPrice() * (100 + iva) / 100;
 	}
+	public String getFormattedCode() {
+		return  String.format("%09d", code);
+	}
 	
+	public String getFullName() {
+		return getName() + "-" + getFormattedCode();
+	}
 	@Override
 	public String toString() {
 		
 		return "Prodotto :\n"
-				+ "code: " + getCode() + "\n"
+				+ "code: " + getFormattedCode() + "\n"
 				+ "nome: " + getName() + "\n"
 				+ "descrizione: " + getDescription() + "\n"
 				+ "prezzo: " + String.format("%.02f", getPrice()) + "€\n"
 				+ "iva: " + getIva() + "%\n"
-				+ "il prezzo comprensivo di iva e': " + String.format("%.02f", getFullPrice()) +"€\n\n";
+				+ "il prezzo comprensivo di iva e': " + String.format("%.02f", getFullPrice()) +"€\n"
+				+ "il nome completo di codice e': " + getFullName() + "\n\n";
 	}
 	
 }

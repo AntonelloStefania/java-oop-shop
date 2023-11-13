@@ -36,7 +36,7 @@ public class Main {
 		Random rnd = new Random();
 		
 		for(int x=0; x<PRODUCT_COUNT; x++) {
-			Prodotto p = new Prodotto(rnd.nextInt(Integer.MAX_VALUE),techProducts[rnd.nextInt(techProducts.length)], techProductDescriptions[rnd.nextInt(techProductDescriptions.length)],rnd.nextFloat(0,299),IVA);
+			Prodotto p = new Prodotto(rnd.nextInt(1000000000),techProducts[rnd.nextInt(techProducts.length)], techProductDescriptions[rnd.nextInt(techProductDescriptions.length)],rnd.nextFloat(0,299),IVA);
 			System.out.println(p);
 		}
 	}
